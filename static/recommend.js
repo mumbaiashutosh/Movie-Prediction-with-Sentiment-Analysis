@@ -53,7 +53,7 @@ function load_details(my_api_key,title){
       }
     },
     error: function(){
-      alert('Invalid FFFFF');
+      alert('Invalid Request');
       $("#loader").delay(500).fadeOut();
     },
   });

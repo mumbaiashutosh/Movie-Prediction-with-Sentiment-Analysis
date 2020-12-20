@@ -12,7 +12,7 @@ $(function() {
   source.addEventListener('input', inputHandler);
 
   $('.movie-button').on('click',function(){
-    var my_api_key = '1663fcc01e534a097f9a39c27a494d07';
+    var my_api_key = 'YOUR_API_KEY';
     var title = $('.movie').val();
     if (title=="") {
       $('.results').css('display','none');
@@ -26,7 +26,7 @@ $(function() {
 
 // will be invoked when clicking on the recommended movies
 function recommendcard(e){
-  var my_api_key = '1663fcc01e534a097f9a39c27a494d07';
+  var my_api_key = 'YOUR_API_KEY';
   var title = e.getAttribute('title'); 
   load_details(my_api_key,title);
 }
@@ -35,7 +35,7 @@ function recommendcard(e){
 function load_details(my_api_key,title){
   $.ajax({
     type: 'GET',
-    url:'https://api.themoviedb.org/3/movie/550?api_key=1663fcc01e534a097f9a39c27a494d07'&query='+title,
+    url:'https://api.themoviedb.org/3/search/movie?api_key='+my_api_key+'&query='+title,
 
     success: function(movie){
       if(movie.results.length<1){
